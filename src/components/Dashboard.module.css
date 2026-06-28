@@ -1,0 +1,585 @@
+/* Dashboard.module.css */
+
+.container {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  animation: fadeIn 0.4s ease-out;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Banner Hero */
+.heroBanner {
+  background: linear-gradient(135deg, #002C17 0%, #001408 100%);
+  background-image: linear-gradient(135deg, rgba(0, 44, 23, 0.35) 0%, rgba(0, 20, 8, 0.6) 100%),
+    url('../assets/Background_Login.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 40px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(210, 221, 216, 0.15);
+  border: 1px solid rgba(244, 235, 235, 0.05);
+}
+
+@media (max-width: 900px) {
+  .heroBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+}
+
+.heroLeft {
+  max-width: 600px;
+}
+
+.heroTag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6BFF8F;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.heroDesc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.heroActionBtn {
+  background-color: #6BFF8F;
+  color: #002C17;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(107, 255, 143, 0.2);
+}
+
+.heroActionBtn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.3);
+}
+
+.heroActionIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 18px;
+}
+
+/* Stats Row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .statsRow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statsRow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.statsCard {
+  background-color: #ffffff;
+  border: 1px solid #c1c8c0;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.statsLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statsTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #717972;
+}
+
+.statsValue {
+  font-size: 24px;
+  font-weight: 800;
+  color: #001408;
+  letter-spacing: -0.5px;
+}
+
+.statsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.badgePlus {
+  background-color: #e8f9ec;
+  color: #007432;
+}
+
+.badgeTotal {
+  background-color: #eceef0;
+  color: #414942;
+}
+
+.badgeWarning {
+  background-color: #fff4e5;
+  color: #b25e00;
+}
+
+.statsIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 28px;
+  color: #414942;
+  background-color: #f2f4f6;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Row Bento splits */
+.bentoRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .bentoRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bentoCard {
+  background-color: #ffffff;
+  border: 1px solid #c1c8c0;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #eceef0;
+  padding-bottom: 16px;
+}
+
+.cardHeading {
+  font-size: 18px;
+  font-weight: 800;
+  color: #001408;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardHeadingIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 24px;
+  color: #007432;
+}
+
+.customSelectWrapper {
+  position: relative;
+  width: 200px;
+  min-width: 0;
+}
+
+.customSelect {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #c1c8c0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #414942;
+  transition: all 0.2s ease;
+  min-width: 0;
+  width: 100%;
+}
+
+.customSelect span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.inputFocused {
+  border-color: #007432;
+  box-shadow: 0 0 0 3px rgba(0, 116, 50, 0.15);
+}
+
+.arrowIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 20px;
+  color: #414942;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+  color: #007432;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e0e3e5;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  overflow: hidden;
+  padding: 4px 0;
+  animation: fadeIn 0.2s ease;
+}
+
+.dropdownItem {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #191c1e;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #f2f4f6;
+  color: #007432;
+}
+
+.dropdownItemSelected {
+  background-color: #e5f6eb;
+  color: #007432;
+  font-weight: 700;
+}
+
+/* Custom Visual Chart - Circular Donut Chart Layout */
+.donutLayout {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .donutLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.chartWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donutSvg {
+  transform: rotate(-90deg);
+  transition: all 0.3s ease;
+}
+
+.centerLabel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+.centerTotal {
+  font-size: 32px;
+  font-weight: 900;
+  color: #002C17;
+  line-height: 1;
+}
+
+.centerTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #717972;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.legendList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background-color: #f8faf9;
+  border: 1px solid #eef2f0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.legendItem:hover {
+  background-color: #f0f7f3;
+  border-color: #d1ebd9;
+  transform: translateX(4px);
+}
+
+.legendLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendName {
+  font-size: 14px;
+  font-weight: 700;
+  color: #191c1e;
+}
+
+.legendRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.legendCount {
+  font-size: 14px;
+  font-weight: 700;
+  color: #002C17;
+}
+
+.legendPercentage {
+  font-size: 12px;
+  font-weight: 700;
+  color: #007432;
+  background-color: #e8f9ec;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Feed List (Laporan Bulanan) */
+.feedList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedItem {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eceef0;
+}
+
+.feedItem:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.feedDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #007432;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.feedContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feedText {
+  font-size: 13px;
+  color: #191c1e;
+  line-height: 1.4;
+}
+
+.feedMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedDate {
+  font-size: 11px;
+  color: #717972;
+}
+
+.feedTag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.tagGreen {
+  background-color: #e8f9ec;
+  color: #007432;
+}
+
+.tagOrange {
+  background-color: #fff4e5;
+  color: #b25e00;
+}
+
+.tagBlue {
+  background-color: #e6f5ff;
+  color: #0059b2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    gap: 16px;
+  }
+
+  .heroBanner {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .heroTitle {
+    font-size: 20px;
+  }
+
+  .heroDesc {
+    font-size: 12px;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .statsCard {
+    padding: 16px;
+  }
+
+  .statsValue {
+    font-size: 20px;
+  }
+
+  .bentoCard {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  .cardHeading {
+    font-size: 15px;
+  }
+
+  .customSelectWrapper {
+    width: 100%;
+  }
+
+  .donutLayout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .legendItem {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .legendRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
