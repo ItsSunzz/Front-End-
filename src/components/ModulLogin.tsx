@@ -32,14 +32,17 @@ export default function ModulLogin({ isOpen, onClose, onLoginSuccess }: ModulLog
     }
 
     try {
-      const response = await fetch('http://localhost:8000/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      });
+        const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/login`,
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  }
+);
 
       const data = await response.json();
 
