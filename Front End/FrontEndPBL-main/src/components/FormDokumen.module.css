@@ -1,0 +1,484 @@
+/* FormDokumen.module.css */
+
+.formCard {
+  background-color: #ffffff;
+  border: 1px solid #c1c8c0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 24px;
+}
+
+.alertHeader {
+  background-color: #eceef0;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.alertIconContainer {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #6bff8f;
+  color: #002c0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alertIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 24px;
+  font-variation-settings: 'FILL' 1;
+}
+
+.alertTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #001408;
+}
+
+.alertSubtitle {
+  font-size: 11px;
+  color: #555555;
+  margin-top: 1px;
+}
+
+.cardBody {
+  padding: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Upload cards styling */
+.uploadCard {
+  border: 1px dashed #c1c8c0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.uploadCard:hover {
+  border-color: #007432;
+  background-color: rgba(0, 116, 50, 0.02);
+  transform: translateY(-2px);
+}
+
+.cardActive {
+  border-style: solid;
+  border-color: #007432;
+  background-color: rgba(107, 255, 143, 0.05);
+}
+
+.docIconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f2f4f6;
+  color: #414942;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.cardActive .docIconContainer {
+  background-color: #007432;
+  color: #ffffff;
+}
+
+.docIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 24px;
+}
+
+.docTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #191c1e;
+  margin-bottom: 4px;
+}
+
+.docDesc {
+  font-size: 11px;
+  color: #717972;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.btnUpload {
+  width: 100%;
+  max-width: 160px;
+  padding: 10px 16px;
+  background-color: #007432;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 116, 50, 0.1);
+}
+
+.btnUpload:hover {
+  background-color: #006E2F;
+  box-shadow: 0 4px 8px rgba(0, 110, 47, 0.2);
+}
+
+.btnSuccess {
+  background-color: #eceef0;
+  border: 1px solid #c1c8c0;
+  color: #007432;
+  box-shadow: none;
+}
+
+.btnSuccess:hover {
+  background-color: #e0e3e5;
+  color: #006e2f;
+}
+
+.uploadIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 16px;
+}
+
+.successIndicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #007432;
+  font-family: 'Material Symbols Outlined';
+  font-size: 20px;
+}
+
+/* Stepper common styling (placed at top of page) */
+.stepperContainer {
+  background-color: #ffffff;
+  border: 1px solid #c1c8c0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  margin-bottom: 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.stepperTrack {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.lineBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  height: 2px;
+  background-color: #e0e3e5;
+  z-index: 1;
+}
+
+.lineProgress {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  height: 2px;
+  background-color: #007432;
+  z-index: 1;
+  transition: width 0.4s ease;
+}
+
+.stepNode {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.stepCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e3e5;
+  color: #191c1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.activeCircle {
+  background-color: #001408;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 20, 8, 0.2);
+}
+
+.completedCircle {
+  background-color: #007432;
+  color: #ffffff;
+}
+
+.checkMark {
+  font-family: 'Material Symbols Outlined';
+  font-size: 20px;
+}
+
+.stepLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #717972;
+}
+
+.activeLabel {
+  color: #001408;
+  font-weight: 700;
+}
+
+/* Actions footer */
+.actionFooter {
+  padding: 24px 0 48px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnBack {
+  background: none;
+  border: 1px solid #c1c8c0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #414942;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btnBack:hover {
+  background-color: #eceef0;
+}
+
+.btnBackIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 18px;
+}
+
+.btnGroupRight {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btnDraft {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #007432;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnDraft:hover {
+  color: #006E2F;
+  text-decoration: underline;
+}
+
+.btnSubmit {
+  background-color: #007432;
+  color: #ffffff;
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 6px rgba(0, 116, 50, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btnSubmit:hover {
+  background-color: #006E2F;
+  box-shadow: 0 6px 12px rgba(0, 110, 47, 0.25);
+  transform: translateY(-1px);
+}
+
+.btnSubmit:active {
+  transform: translateY(0);
+}
+
+.unfilledError {
+  font-size: 12px;
+  color: #ba1a1a;
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: right;
+}
+
+/* Masa Jabatan card internal styles */
+.masaJabatanGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.masaJabatanField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.masaJabatanLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #717972;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.masaJabatanInput {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #c1c8c0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #191c1e;
+  background-color: #f9fafb;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.masaJabatanInput:focus {
+  border-color: #007432;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 116, 50, 0.12);
+}
+
+.masaJabatanDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.masaJabatanArrow {
+  font-family: 'Material Symbols Outlined';
+  font-size: 14px;
+  color: #c1c8c0;
+}
+
+@media (max-width: 640px) {
+  .alertHeader {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .alertIconContainer {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  .alertIcon {
+    font-size: 20px;
+  }
+
+  .alertTitle {
+    font-size: 13px;
+  }
+
+  .alertSubtitle {
+    font-size: 10px;
+  }
+
+  .cardBody {
+    padding: 16px 20px;
+  }
+
+  .actionFooter {
+    padding: 16px 20px;
+  }
+
+  .stepperContainer {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .stepCircle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    border-width: 2px;
+  }
+
+  .stepLabel {
+    font-size: 11px;
+  }
+
+  .lineBg,
+  .lineProgress {
+    top: 16px;
+  }
+}
+
+
+.masaJabatanHingga {
+  font-size: 11px;
+  font-weight: 600;
+  color: #717972;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
