@@ -1,0 +1,266 @@
+/* HalamanSelesai.module.css */
+
+.canvas {
+  width: 100%;
+  max-width: 960px;
+  background-color: #ffffff;
+  border: 1px solid #c1c8c0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  overflow: hidden;
+  min-height: 500px;
+  font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .canvas {
+    flex-direction: column;
+  }
+}
+
+/* Left panel style (Progress tracker & photo) */
+.leftPanel {
+  width: 33%;
+  background-color: #f2f4f6;
+  padding: 32px;
+  border-r: 1px solid #e0e3e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .leftPanel {
+    width: 100%;
+    border-r: none;
+    border-b: 1px solid #e0e3e5;
+    gap: 24px;
+  }
+}
+
+.leftHeaderTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #001408;
+  margin-bottom: 8px;
+}
+
+.leftHeaderSubtitle {
+  font-size: 13px;
+  color: #414942;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.checkList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #007432;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.checkIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 22px;
+  font-variation-settings: 'FILL' 1;
+}
+
+.decorImage {
+  width: 100%;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: grayscale(1);
+  opacity: 0.35;
+  margin-top: 32px;
+}
+
+/* Right Panel: Success Area */
+.rightPanel {
+  flex: 1;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at bottom right, rgba(148, 245, 163, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+@media (max-width: 768px) {
+  .rightPanel {
+    padding: 32px 24px;
+  }
+}
+
+.successIconBadge {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.glowBg {
+  position: absolute;
+  inset: -16px;
+  background-color: #7bdb8c;
+  opacity: 0.2;
+  filter: blur(20px);
+  border-radius: 50%;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+.successCircle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #a4d1b1;
+  color: #002109;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 116, 50, 0.2);
+}
+
+.successCheckIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 48px;
+  font-variation-settings: 'FILL' 1;
+  font-weight: 700;
+}
+
+.successTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: #001408;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.successDesc {
+  max-width: 440px;
+  font-size: 15px;
+  color: #414942;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.statusIndicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #94f5a3;
+  color: #002109;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid rgba(0, 116, 50, 0.15);
+  margin-bottom: 40px;
+}
+
+.statusIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 18px;
+}
+
+/* Action Buttons Container layout */
+.btnRow {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  max-width: 520px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .btnRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.btnDashboard {
+  flex: 1;
+  background-color: #ffffff;
+  border: 2px solid #001408;
+  color: #001408;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btnDashboard:hover {
+  background-color: rgba(0, 20, 8, 0.05);
+}
+
+.btnDashboardIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.btnDashboard:hover .btnDashboardIcon {
+  transform: translateX(-4px);
+}
+
+.btnOther {
+  flex: 1;
+  background-color: #002C17;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 44, 23, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btnOther:hover {
+  background-color: #001408;
+  box-shadow: 0 6px 16px rgba(0, 20, 8, 0.3);
+}
+
+.btnOtherIcon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.btnOther:hover .btnOtherIcon {
+  transform: translateX(4px);
+}
+
+.metaRef {
+  margin-top: 48px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(65, 73, 66, 0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes pulseGlow {
+  from { transform: scale(1); opacity: 0.15; }
+  to { transform: scale(1.15); opacity: 0.3; }
+}
