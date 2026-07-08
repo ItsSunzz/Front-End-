@@ -1,6 +1,0 @@
-{
-  "name": "SI Bansos Boyolali",
-  "description": "Sistem Informasi Bantuan Sosial - Sekretariat Daerah Kabupaten Boyolali untuk pimpinan pondok dan guru mengaji.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

@@ -47,7 +47,7 @@ class PengajuanController extends Controller
             }
         }
 
-        $submissions = $query->latest()->get()->map(function($p) {
+        $submissions = $query->orderBy('updated_at', 'desc')->get()->map(function($p) {
             $u = $p->user;
             return [
                 'id' => $p->pengajuan_id,
@@ -70,6 +70,7 @@ class PengajuanController extends Controller
                 'masaJabatanSelesai' => $u ? $u->masa_jabatan_selesai : '',
                 'status' => $p->status_pengajuan === 'disetujui' ? 'Terverifikasi' : ($p->status_pengajuan === 'ditolak' ? 'Ditolak' : 'Pending'),
                 'tanggalInput' => $p->created_at->format('d/m/Y'),
+                'updatedAt' => $p->updated_at->toIso8601String(),
                 'tahun' => $p->program ? $p->program->tahun : '',
                 'catatan' => $p->catatan_pengajuan,
                 'dokumenUploaded' => [
@@ -128,8 +129,8 @@ class PengajuanController extends Controller
             'tempat_lahir' => 'required|string|max:255',
             'tanggal_lahir' => 'nullable|date',
             'jenis_kelamin' => 'nullable|string',
-            'rt' => 'nullable|string|max:10',
-            'rw' => 'nullable|string|max:10',
+            'rt' => 'nullable|string|regex:/^[0-9]{1,3}$/',
+            'rw' => 'nullable|string|regex:/^[0-9]{1,3}$/',
             'dusun' => 'nullable|string|max:255',
             'kategori_penerima' => 'required|string',
             'bank' => 'nullable|string|max:255',
@@ -281,8 +282,8 @@ class PengajuanController extends Controller
                 'nama' => 'nullable|string|max:255',
                 'nik' => 'nullable|string|size:16',
                 'kategori' => 'nullable|string',
-                'rt' => 'nullable|string|max:10',
-                'rw' => 'nullable|string|max:10',
+                'rt' => 'nullable|string|regex:/^[0-9]{1,3}$/',
+                'rw' => 'nullable|string|regex:/^[0-9]{1,3}$/',
                 'dusun' => 'nullable|string|max:255',
                 'desaKelurahan' => 'nullable|string',
                 'noKK' => 'nullable|string|size:16',
